@@ -1,0 +1,19 @@
+body{
+    background-color: #342048;
+    color: #00d6c3;
+}
+
+nav{
+    padding: 5px;
+    line-height: 30px;
+}
+
+footer{
+    position: fixed;
+    bottom: 100px;
+    text-align: center;
+}
+
+header{
+    text-align: center;
+}
