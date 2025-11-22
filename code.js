@@ -44,3 +44,36 @@ function isPalindrome(wordToTest)
     // compare if the cleaned word and the reversed words are the same
     return cleanedWord == reversedWord;
 }
+function addAudio()
+{
+    let audioElem = document.createElement("audio");
+
+    audioElem.setAttribute("id", "myAudio");
+
+    //
+    audioElem.setAttribute("src", "us-lab-background.mp3");
+
+    //
+    audioElem.setAttribute("controls", "controls");
+
+    //
+    document.getElementById("divAudio").appendChild(audioElem)
+
+    //
+    document.getElementById("btnAddAudio").hidden = true
+
+    document.getElementById("btnPlayAudio").hidden = false
+    document.getElementById("btnPauseAudio").hidden = false
+}
+
+function playAudio()
+{
+    let audio = document.getElementById("myAudio");
+    audio.play();
+}
+
+function pauseAudio()
+{
+    let audio = document.getElementById("myAudio");
+    audio.pause();
+}
