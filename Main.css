@@ -14,9 +14,10 @@ footer{
     text-align: center;
 }
 #memeImage{
-    display:block;
+    /* display:block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
+    position: absolute;
 }
 
 header{

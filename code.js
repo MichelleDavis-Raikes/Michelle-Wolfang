@@ -70,6 +70,42 @@ function testPalin()
     }
 
 }
+
+let intervalID = 0;
+
+// this function will start th eimage moving around
+function startMove()
+{
+    // create a shortcut/nickname to the image in the HTML
+    let image = document.getElementById("memeImage");
+
+    // store the current interval id
+    intervalID = setInterval(function(){
+        // the code that runs repeatedly
+        let xCord = getRandomNum();
+        let yCord = getRandomNum();
+        // change the x cord 
+        image.style.left = xCord + "px";
+        image.style.top = yCord + "px";
+    }, 20);
+
+    document.getElementById("btnStart").disabled = true;
+    document.getElementById("btnStop").disabled = false;
+}
+
+function stopMove()
+{
+    // call clear interva and pass in the interval id
+    clearInterval(intervalID);
+    document.getElementById("btnStart").disabled = false;
+    document.getElementById("btnStop").disabled = true;
+}
+
+function getRandomNum()
+{
+    return Math.floor(Math.random() * 800);
+}
+
 function isPalindrome(wordToTest)
 {
     // remove any spaces inside of the word(s)
