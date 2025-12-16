@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling Basics</title>
+</head>
+<body>
+    <main>
+        <h1>Event Handling Basics</h1>
+
+        <button id="btnClickMe" onclick="changeText();">Click Me</button>
+    </main>
+    <!-- -->
+    <script>
+
+        /*
+         *
+         *
+         * 
+         * 
+        */
+        function changeText(){
+            //
+            document.getElementById("heading").textContent = "Event Handled";
+        }
+
+        //
+        //
+        //
+        //
+        setInterval(function(){
+            console.log("test");
+        }, 1000);
+    </script>
+</body>
+</html>
