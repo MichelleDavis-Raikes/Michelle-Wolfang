@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+
+    <link rel="stylesheet" href="Main.css">
+
+    <style>
+        table{
+            max-width: 400px;
+            /* */
+            border-collapse: collapse;
+        }
+
+        tr, th, td{
+            padding: 10px;
+        }
+
+        tr{
+            border: 2px solid rgb(5, 3, 102);
+        }
+
+        td{
+            border: 2px solid rgb(5, 3, 102);
+        }
+
+        th{
+            background-color: rgb(186, 230, 243);
+            color: rgb(32, 5, 43);
+        }
+
+        tr:nth-child(even){
+            background-color: rgb(208, 168, 245);
+            color: rgb(32, 5, 43);
+        }
+
+        tr:hover{
+           background-color: aquamarine;
+           color: steelblue;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Programming Mistakes</h1>
+
+        <table id="tblData">
+            <caption>Programming Mistakes and the costs</caption>
+            <!-- -->
+            <!-- <tr>
+                td
+                <td></td>
+                <td></td>
+            </tr> -->
+            <tr>
+                <!-- -->
+                <th>Project</th>
+                <th>Year</th>
+                <th>Cost</th>
+            </tr>
+        </table>
+    </main>
+
+    <script>
+        //
+        function loadData(){
+            //
+            let arrProblems = [
+                //
+                ["Crowdstrike", 2024, "$5.4B"],
+                ["Facebook", 2020, "$90M"],
+                ["Citibank", 2020, "$900M"],
+                ["Mars Climate Orbiter", 1999, "$327M"],
+            ];
+
+            //
+            for (let i=0; i<arrProblems.length; i++){
+                //
+                let tr = document.createElement("tr");
+
+                //
+                for (let j=0; j < arrProblems[i].length; j++){
+                    //
+                    let td = document.createElement("td");
+
+                    //
+                    td.textContent = arrProblems[i][j];
+
+                    //
+                    tr.appendChild(td);
+                }
+
+                //
+                document.getElementById("tblData").appendChild(tr);
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
