@@ -103,7 +103,7 @@ function stopMove()
 
 function getRandomNum()
 {
-    return Math.floor(Math.random() * 800);
+    return Math.floor(Math.random() * window.screen.width);
 }
 
 function isPalindrome(wordToTest)
