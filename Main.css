@@ -17,3 +17,16 @@ footer{
 header{
     text-align: center;
 }
+
+.controls{
+    /* display: flex;
+    align-items: center;
+    gap: 10px; */
+    position:relative;
+}
+#sprite {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 64px; /* adjust as needed */
+}

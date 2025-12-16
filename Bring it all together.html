@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bring it all Together</title>
+
+    <link rel="stylesheet" href="Main.css">
+    <script src="code.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Bring It All Together</h1>
+    </header>
+    
+    <div class="contols">
+        <button id="btnStart" onclick="moveSprite()">Move Image</button>
+        <button id="btnStop" onclick="stopSprite()">Stop Image</button>
+    </div>
+    <img style="margin-top: 50px;" id="sprite" src="character_sprite.png">
+
+    <script>
+        const sprite = document.getElementById("sprite");
+
+        const startY = 50;
+        const startX = 0;
+        let x = 0;
+        let y = 50;
+        let speed = 20;
+        let direction = 1; // 1 = right, -1 = left
+        let rowHeight = 80;
+        
+        const screenWidth = window.innerWidth - sprite.offsetWidth;
+        const screenHeight = 1000;
+
+        function moveSprite()
+        {
+            intervalID = setInterval(function(){
+            console.log("x");
+            x += speed * direction;
+                
+            if(y <= screenHeight)
+            {
+
+                // Hit right edge
+                if (x >= screenWidth && direction === 1) {
+                    direction = -1;
+                    y += rowHeight;
+                }
+
+                // Hit left edge
+                if (x <= 0 && direction === -1) {
+                    direction = 1;
+                    y += rowHeight;
+                }
+
+                    sprite.style.left = x + "px";
+                    sprite.style.top = y + "px";
+            }
+
+            else
+            {
+                x = startX;
+                y = startY;
+                sprite.style.left = startX + "px";
+                sprite.style.top = startY + "px";
+                                    
+            }
+            })
+        }
+
+        function stopSprite()
+        {
+            clearInterval(intervalID);
+            // document.getElementById("btnStart").disabled = false;
+            // document.getElementById("btnStop").disabled = true;
+
+        }
+    </script>
+</body>
+</html>
